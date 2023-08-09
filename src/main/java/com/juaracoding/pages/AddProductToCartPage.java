@@ -34,7 +34,6 @@ public class AddProductToCartPage {
     WebElement btnClearShoppingCart;
 
     public void addToCartProduct(){
-//        login.login(); // memanggil method login() pada kelas LoginPage karena depedency
         js.executeScript("window.scrollBy(0,-500)"); // scroll ke atas
         btnCart.click(); // click button cart
         /*
