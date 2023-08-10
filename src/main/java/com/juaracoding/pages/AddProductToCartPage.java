@@ -18,7 +18,7 @@ public class AddProductToCartPage {
 
     @FindBy(className = "cart-button") // locator button cart
     WebElement btnCart;
-    @FindBy(xpath = "//a[@class='button wc-backward wp-element-button']") // locator button return shop
+    @FindBy(xpath = "//a[@class='button wc-backward']") // locator button return shop
     WebElement btnReturnShop;
     @FindBy(className = "noo-product-inner") // locator item produk
     WebElement productItem;
@@ -57,9 +57,8 @@ public class AddProductToCartPage {
         colorItem.sendKeys("Beige"); // memilih warna item
         sizeItem.sendKeys("Large"); // memilih ukuran item
         btnAddToCart.click(); // click button add to cart
-        String txtMessageAddToCartSuccess = messageAddToCartSuccess.getText(); // scraping text message add to cart success
-        // memanggil method dari kelas DriverSingleton untuk assert
-        DriverSingleton.assertEqual(txtMessageAddToCartSuccess,"View cart\n" +
-                "“Black Cross Back Maxi Dress” has been added to your cart.");
+    }
+    public  String getAddToCartSuccess(){
+        return messageAddToCartSuccess.getText();
     }
 }

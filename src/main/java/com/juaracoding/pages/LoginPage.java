@@ -31,18 +31,19 @@ public class LoginPage {
     WebElement textLoginSuccess;
 
     // Custom Method
-    public void login(){
+    public void login(String username, String password){
         closeDismiss.click(); // click dismiss
         btnMyAccount.click(); // click button my account
         js.executeScript("window.scrollBy(0,500)"); // scroll ke bawah
-        username.sendKeys("josepedrofebian"); // input ke dalam field username
-        password.sendKeys("Password190299$"); // input ke dalam field password
+        this.username.sendKeys(username); // input ke dalam field username
+        this.password.sendKeys(password); // input ke dalam field password
         btnLogin.click(); // click button login
         js.executeScript("window.scrollBy(0,500)"); // scroll ke bawah
-        String textLoginSuccessActual = textLoginSuccess.getText(); // scraping text login success by system
-        // memanggil method dari kelas DriverSingleton untuk assert
-        DriverSingleton.assertEqual(textLoginSuccessActual,"Hello josepedrofebian (not josepedrofebian? Log out)\n" +
-                "From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.");
     }
+    public  String getTextLoginSuccess(){
+        return textLoginSuccess.getText();
+    }
+
+
 
 }

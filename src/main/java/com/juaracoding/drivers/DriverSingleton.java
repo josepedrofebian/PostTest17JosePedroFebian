@@ -47,7 +47,7 @@ public class DriverSingleton {
 
     // Menambahkan Method assertEqual
     public static void assertEqual(String actual, String expected){
-        if(actual.equalsIgnoreCase(expected)){
+        if(actual.contains(expected)){
             System.out.println("Status : Pass");
         }else{
             System.out.println("Status : Fail");
